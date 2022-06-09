@@ -24,6 +24,7 @@ jobs:
       - run:
           name: "Print an env var stored in the Project"
           command: echo ${My_name}
+          name: "Print an env var in context"
           command: echo ${name}
 workflows:
   # Name the workflow "welcome"
