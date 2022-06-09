@@ -23,7 +23,8 @@ jobs:
     steps:
       - run:
           name: "Print an env var stored in the Project"
-          command: echo $My_name
+          command: |
+            echo $My_name
       - run:
           name: "Print an env var in context"
           command: echo $name
