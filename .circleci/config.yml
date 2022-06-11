@@ -10,23 +10,19 @@ jobs:
       - run:
               name: "say hello"
               command: "echo hello > output.txt"
-    persist_to_workspace:
-      root: /tmp/dir
-      paths:
-        - output.txt
-    
-    
-    
-    
+      - persist_to_workspace:
+          root: /tmp/dir
+          paths:
+            - output.txt
+   
   print_output-file:
     docker:
       - image: circleci/node:13.8.0
     steps:
+      - attach_workspace:
+          at: /tmp/dir
       - run:
           command: "cat output.txt"
-    attach_workspace:
-      /tmp/dir
-      
     
     
   print_name:
