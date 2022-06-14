@@ -2,7 +2,25 @@
 version: 2.1
 # Use a package of configuration called an orb.
 
+
+commands:
+  print_pipeline_id:
+    description: "print pipeline id"
+    parameters:
+      to:
+        type: string
+    steps:
+      - run: echo << parameters.to >>
+
 jobs:
+
+  use_cmd:
+   docker:
+     - image: circleci/node:13.8.0
+   steps:
+     - print_pipeline_id:
+         to: $CIRCLE_WORKFLOW_ID
+
   save_hello_world_output:
     docker:
       - image: circleci/node:13.8.0
