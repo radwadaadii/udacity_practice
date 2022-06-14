@@ -59,6 +59,7 @@ workflows:
   welcome:
     # Run the welcome/run job in its own container
     jobs:
+      - use_cmd
       - save_hello_world_output
       - print_output-file:
           requires:
