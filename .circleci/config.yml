@@ -14,7 +14,7 @@ commands:
 
 jobs:
 
-   test_fail:
+  test_fail:
    docker:
      - image: circleci/node:13.8.0
    steps:
