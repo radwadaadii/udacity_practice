@@ -21,7 +21,7 @@ jobs:
      - run: 
          name: failed_job
          command: return 1
-     -run: 
+     - run: 
          name: action
          command: echo "hello error"
          when: on_fail
