@@ -18,9 +18,7 @@ jobs:
    docker:
      - image: circleci/node:13.8.0
    steps:
-     - run: 
-         name: failed_job
-         command: exit 1
+     - run:  exit 1
      - run: 
          name: action
          command: echo "hello error"
