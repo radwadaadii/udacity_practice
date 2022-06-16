@@ -20,7 +20,7 @@ jobs:
    steps:
      - run: 
          name: failed_job
-         command: return 1
+         command: exit 1
      - run: 
          name: action
          command: echo "hello error"
